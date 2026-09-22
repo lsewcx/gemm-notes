@@ -4,3 +4,5 @@ doc/.vitepress/dist
 .DS_Store
 *.log
 /.vitepress
+code/build
+compile_commands.json
