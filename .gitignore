@@ -1,8 +1,15 @@
+# 依赖与构建产物
 node_modules
+code/build
 doc/.vitepress/cache
 doc/.vitepress/dist
+
+# clangd 索引缓存
+code/.cache
+
+# CMake 导出的编译数据库（仓库根目录的软链指向 code/build）
+compile_commands.json
+
+# 系统与编辑器杂项
 .DS_Store
 *.log
-/.vitepress
-code/build
-compile_commands.json
