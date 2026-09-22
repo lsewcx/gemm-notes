@@ -3,4 +3,4 @@ doc/.vitepress/cache
 doc/.vitepress/dist
 .DS_Store
 *.log
-.vitepress
+/.vitepress
