@@ -8,7 +8,9 @@
 
 ```
 gemm-notes/
+├── .github/workflows/    # GitHub Pages 部署（push main 触发）
 ├── doc/                  # VitePress 文档站（学习笔记）
+│   ├── .vitepress/       # 站点配置（数学公式、导航、侧边栏）
 │   ├── index.md
 │   └── notes/            # 笔记正文
 ├── code/                 # 代码与基准测试
@@ -38,8 +40,11 @@ cmake --build build -j
 # 控制每组测试的最短运行时间（默认 0.5s）
 ./build/normal --benchmark_min_time=1s
 
-# 固定迭代次数
-./build/normal --benchmark_iterations=5
+# 固定迭代次数：x 后缀表示"跑够多少次迭代"
+./build/normal --benchmark_min_time=5x
+
+# 重复测量取统计值（噪声大时看中位数）
+./build/normal --benchmark_repetitions=5
 ```
 
 ## 文档站
@@ -63,6 +68,6 @@ npm run docs:dev
 - [x] 朴素三重循环版本 + Google Benchmark 基准
 - [ ] 循环重排 / ikj 优化
 - [ ] 循环分块（blocking）
-- [ ] SIMD 向量化（AVX2 / NEON）
+- [ ] SIMD 向量化（AVX2 / AVX-512 / NEON）
 - [ ] 多线程（OpenMP）
 - [ ] 与 OpenBLAS / MKL 对比

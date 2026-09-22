@@ -5,6 +5,9 @@ export default defineConfig({
   base: '/gemm-notes/',
   title: "GEMM 学习笔记",
   description: "个人学习记录与知识库",
+  markdown: {
+    math: true  // 启用 LaTeX 公式渲染（markdown-it-mathjax3）
+  },
   vite: {
     build: {
       target: 'esnext'
@@ -35,7 +38,8 @@ export default defineConfig({
       {
         text: '笔记目录',
         items: [
-          { text: '起步', link: '/notes/' }
+          { text: '起步', link: '/notes/' },
+          { text: '01 · 最朴素的 GEMM', link: '/notes/01-naive-gemm' }
         ]
       }
     ],
